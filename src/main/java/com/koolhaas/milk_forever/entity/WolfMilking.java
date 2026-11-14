@@ -11,7 +11,6 @@ import net.minecraft.world.entity.animal.wolf.Wolf;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.Items;
 
 import com.koolhaas.milk_forever.MilkForever;
 
@@ -19,7 +18,7 @@ public final class WolfMilking {
 	private WolfMilking() {
 	}
 
-	public static void register(Item wildDogMilk) {
+	public static void register(Item carton, Item wildDogMilk) {
 		Identifier soundId = MilkForever.id("entity.wolf.milk");
 		SoundEvent sound = Registry.register(
 				BuiltInRegistries.SOUND_EVENT,
@@ -31,7 +30,7 @@ public final class WolfMilking {
 			if (player.isSpectator()
 					|| !(entity instanceof Wolf wolf)
 					|| wolf.isBaby()
-					|| !player.getItemInHand(hand).is(Items.BUCKET)) {
+					|| !player.getItemInHand(hand).is(carton)) {
 				return InteractionResult.PASS;
 			}
 
@@ -39,12 +38,12 @@ public final class WolfMilking {
 				return InteractionResult.SUCCESS;
 			}
 
-			ItemStack filledBucket = ItemUtils.createFilledResult(
+			ItemStack wildDogMilkStack = ItemUtils.createFilledResult(
 					player.getItemInHand(hand),
 					player,
 					wildDogMilk.getDefaultInstance()
 			);
-			player.setItemInHand(hand, filledBucket);
+			player.setItemInHand(hand, wildDogMilkStack);
 			wolf.playSound(sound, 1.0F, 1.0F);
 			return InteractionResult.SUCCESS;
 		});

@@ -11,7 +11,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
@@ -21,7 +20,7 @@ public final class WildDogMilkItem {
 	private WildDogMilkItem() {
 	}
 
-	public static Item register() {
+	public static Item register(Item containerItem) {
 		ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, MilkForever.id("wild_dog_milk"));
 		Item item = Registry.register(
 				BuiltInRegistries.ITEM,
@@ -35,7 +34,7 @@ public final class WildDogMilkItem {
 										.onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.NAUSEA, 300)))
 										.build()
 						)
-						.usingConvertsTo(Items.BUCKET))
+						.usingConvertsTo(containerItem))
 		);
 
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS)

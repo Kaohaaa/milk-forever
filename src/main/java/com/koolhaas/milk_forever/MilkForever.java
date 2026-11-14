@@ -5,6 +5,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 
 import com.koolhaas.milk_forever.entity.WolfMilking;
+import com.koolhaas.milk_forever.item.CartonItem;
 import com.koolhaas.milk_forever.item.WildDogMilkItem;
 
 import org.slf4j.Logger;
@@ -20,8 +21,9 @@ public class MilkForever implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		Item wildDogMilk = WildDogMilkItem.register();
-		WolfMilking.register(wildDogMilk);
+		Item carton = CartonItem.register();
+		Item wildDogMilk = WildDogMilkItem.register(carton);
+		WolfMilking.register(carton, wildDogMilk);
 
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
