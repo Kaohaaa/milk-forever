@@ -8,8 +8,9 @@
 		"Koolhaas"
 	],
 	"contact": {
-		"homepage": "https://github.com/Kaohaaa/milk-forever-26.3",
-		"sources": "https://github.com/Kaohaaa/milk-forever-26.3"
+		"homepage": "https://modrinth.com/mod/milk-forever",
+		"sources": "https://github.com/Kaohaaa/milk-forever",
+		"issues": "https://github.com/Kaohaaa/milk-forever/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/milk-forever/icon.png",
