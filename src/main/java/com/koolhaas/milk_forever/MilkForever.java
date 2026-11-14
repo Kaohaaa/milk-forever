@@ -8,10 +8,14 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,8 +34,13 @@ public class MilkForever implements ModInitializer {
 			WILD_DOG_MILK_KEY,
 			new Item(new Item.Properties()
 					.setId(WILD_DOG_MILK_KEY)
-					.stacksTo(1)
-					.food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.3F).build())
+					.stacksTo(16)
+					.food(
+							new FoodProperties.Builder().nutrition(4).saturationModifier(0.3F).build(),
+							Consumable.builder()
+									.onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.NAUSEA, 300)))
+									.build()
+					)
 					.usingConvertsTo(Items.BUCKET))
 	);
 
