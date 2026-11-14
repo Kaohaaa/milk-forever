@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "has_wild_dog_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "milk-forever:wild_dog_milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.milk-forever.eternal_milk.description"
+    },
+    "icon": {
+      "id": "milk-forever:wild_dog_milk"
+    },
+    "title": {
+      "translate": "advancements.milk-forever.eternal_milk.title"
+    },
+    "frame": "goal"
+  }
+}
