@@ -3,15 +3,15 @@
 	"id": "milk-forever",
 	"version": "${version}",
 	"name": "Milk Forever",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Time fades, the wild dog milk remains.",
 	"authors": [
-		"Me!"
+		"Koolhaas"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Kaohaaa/milk-forever-26.3",
+		"sources": "https://github.com/Kaohaaa/milk-forever-26.3"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/milk-forever/icon.png",
 	"environment": "*",
 	"entrypoints": {
