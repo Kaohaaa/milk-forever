@@ -1,7 +1,9 @@
 # Milk Forever
 
 ## Description
-Time fades, the **Wild Dog Milk** remains.
+> Time fades, **Wild Dog Milk** remains.
+
+This is just Koolhaas's first attempt at making a Fabric mod, so it's quite rudimentary.
 
 ## License
 
