@@ -1,0 +1,11 @@
+{
+  "entity.wolf.milk": {
+    "subtitle": "subtitles.entity.wolf.milk",
+    "sounds": [
+      {
+        "name": "minecraft:entity.goat.milk",
+        "type": "event"
+      }
+    ]
+  }
+}

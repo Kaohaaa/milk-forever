@@ -9,7 +9,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -29,6 +29,12 @@ import org.slf4j.LoggerFactory;
 public class MilkForever implements ModInitializer {
 	public static final String MOD_ID = "milk-forever";
 
+	private static final Identifier WOLF_MILK_SOUND_ID = id("entity.wolf.milk");
+	private static final SoundEvent WOLF_MILK_SOUND = Registry.register(
+			BuiltInRegistries.SOUND_EVENT,
+			WOLF_MILK_SOUND_ID,
+			SoundEvent.createVariableRangeEvent(WOLF_MILK_SOUND_ID)
+	);
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
@@ -70,7 +76,7 @@ public class MilkForever implements ModInitializer {
 					WILD_DOG_MILK.getDefaultInstance()
 			);
 			player.setItemInHand(hand, filledBucket);
-			player.playSound(SoundEvents.GOAT_MILK, 1.0F, 1.0F);
+			wolf.playSound(WOLF_MILK_SOUND, 1.0F, 1.0F);
 			return InteractionResult.SUCCESS;
 		});
 
